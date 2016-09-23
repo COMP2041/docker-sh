@@ -20,7 +20,7 @@ RUN ln -s /usr/bin/*3.5 /usr/local/bin &&\
 	chown -R cs2041.cs2041 /web /home &&\
 	wget --quiet -O- http://www.cse.unsw.edu.au/~cs2041/cgi/distributed_files.cgi | \
 	tar -C /home/cs2041/public_html --owner=cs2041 -xJf -
+
 ENV PATH $PATH:/home/cs2041/public_html/scripts
-ARG IMAGE_CREATION_TIME
-ENV IMAGE_CREATION_TIME $IMAGE_CREATION_TIME
-ENTRYPOINT  ["docker_entrypoint_autotest"]
+ADD /entrypoint entrypoint
+ENTRYPOINT ["/entrypoint"]

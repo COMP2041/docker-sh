@@ -1,0 +1,24 @@
+#!/bin/bash
+#set -x
+unset DEBIAN_FRONTEND
+
+cd /root
+cat <<eof
+
+Welcome to the COMP[29]041 Docker autotest container
+
+If the autotests might changed since this Docker image was created run:
+
+update_files
+
+This will fetch any updated autotest files from CSE (1-2Mb).
+
+eof
+
+if test $# = 0
+then
+	export PS1='$ '
+	bash
+else
+	"$@"
+fi
