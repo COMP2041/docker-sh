@@ -4,8 +4,18 @@ unset DEBIAN_FRONTEND
 
 cd /root
 
-if ls -- /root/* >/dev/null 2>&1
+# Test if we have some files in /root - 
+if test -z "`ls /root 2>/dev/null`"
 then 
+    cat <<eof
+    
+No files in /root
+You need to mount a directory on /root for example:
+
+docker run -it -v /C/users/andrewt:/root comp2041/sh
+
+eof
+else
     cat <<eof
 
 Welcome to the COMP[29]041 Docker autotest container
@@ -59,14 +69,6 @@ ssh-copy-id ${zid-z5555555}@cse.unsw.edu.au
 
 eof
     fi
-else
-    cat <<eof
-    
-No files in /root
-You need to mount a directory on /root for example:
-docker run -it -v c:/users/andrewt:/root comp2041/sh
-
-eof
 fi
 
 if test $# = 0
