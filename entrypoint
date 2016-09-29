@@ -3,7 +3,10 @@
 unset DEBIAN_FRONTEND
 
 cd /root
-cat <<eof
+
+if ls -- /root/* >/dev/null 2>&1
+then 
+    cat <<eof
 
 Welcome to the COMP[29]041 Docker autotest container
 
@@ -15,9 +18,29 @@ This will fetch any updated autotest files from CSE (1-2Mb).
 
 eof
 
-if test ! -d .ssh
-then
-	cat <<eof
+    if test ! -r .zid
+    then
+        for attempt in 1 2 3 
+        do
+            echo -n "Enter your zid: "
+            read zid
+            zid=`echo "$zid"|sed 's/[^0-9]//g;s/^/z/'`
+            case "$zid" in
+            z[0-9][0-9][0-9][0-9][0-9][0-9][0-9]) 
+                echo Storing "$zid" in $HOME/.zid
+                echo "$zid" >$HOME/.zid
+                export zid
+                break
+                ;;
+            *)
+                echo "Incorrect format for zid: '$zid'"
+            esac
+            test $attempt = 3 && exit 1
+        done
+    fi
+    if test ! -d $HOME/.ssh
+    then
+        cat <<eof
 You don't seem to have a ssh key.
 
 If this your own computer you might like to create a ssh key
@@ -25,18 +48,26 @@ by running this command (just hit return for the questions):
 
 ssh-keygen
 
-You can then copy it to CSE using this command (replace z5555555 with your zid):
+You can then copy it to CSE using this command:
 
-ssh-copy-id z5555555@cse.unsw.edu.au
+ssh-copy-id ${zid-z5555555}@cse.unsw.edu.au
 
 eof
+    fi
+else
+    cat <<eof
+    
+No files in /root
+You need to mount a directory on /root for example:
+docker run -it -v c:/users/andrewt:/root comp2041/sh
 
+eof
 fi
 
 if test $# = 0
 then
-	export PS1='$ '
-	bash
+    export PS1='$ '
+    bash
 else
-	"$@"
+    "$@"
 fi
