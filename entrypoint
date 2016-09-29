@@ -15,6 +15,24 @@ This will fetch any updated autotest files from CSE (1-2Mb).
 
 eof
 
+if test ! -d .ssh
+then
+	cat <<eof
+You don't seem to have a ssh key.
+
+If this your own computer you might like to create a ssh key
+by running this command (just hit return for the questions):
+
+ssh-keygen
+
+You can then copy it to CSE using this command (replace z5555555 with your zid):
+
+ssh-copy-id z5555555@cse.unsw.edu.au
+
+eof
+
+fi
+
 if test $# = 0
 then
 	export PS1='$ '
