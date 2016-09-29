@@ -15,6 +15,11 @@ If the autotests might changed since this Docker image was created run:
 update_files
 
 This will fetch any updated autotest files from CSE (1-2Mb).
+You can also fetch the latest image by
+
+docker pull comp2041/sh
+ 
+Beware this maybe  100+Mb if there have been major changes.
 
 eof
 
