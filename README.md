@@ -10,4 +10,6 @@ All the tools & scripts needed for [COMP2041/COMP9041](http://cse.unsw.edu.au/~c
 
 Run like this:
 
-`docker run -it -v c:/users/andrewt:/root comp2041/sh`
+`docker run -it -v /c/Users/andrewt:/root comp2041/sh`
+
+See [comp2041/cgi](https://hub.docker.com/r/comp2041/cgi) to run CGI scripts 
