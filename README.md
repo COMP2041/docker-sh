@@ -4,7 +4,7 @@ All the tools & scripts needed for [COMP2041/COMP9041](http://cse.unsw.edu.au/~c
 * perl
 * python 2 & 3
 * git
-* miscellaneous utils (wget curl id3 time vim ssh imagemagick)
+* miscellaneous utils (wget,curl,id3,time,vim,ssh,imagemagick)
 * autotest scripts for labs & assignments
 * give
 
