@@ -16,6 +16,7 @@ RUN ln -s /usr/bin/*3.5 /usr/local/bin &&\
 	ln -s  /home/cs2041/public_html /web/cs2041 &&\
 	mkdir /home/cs2041/bin &&\
 	ln -sf /home/cs2041/public_html/scripts/autotest /home/cs2041/bin &&\
+	ln -sf  give_remote /home/cs2041/public_html/scripts/give &&\
 	chmod -R 755 /web /home &&\
 	chown -R cs2041.cs2041 /web /home &&\
 	wget --quiet -O- http://www.cse.unsw.edu.au/~cs2041/cgi/distributed_files.cgi | \
