@@ -1,4 +1,4 @@
-All the tools & scripts needed for [COMP2041/COMP9041](http://cse.unsw.edu.au/~cs2041) including:
+All the command-line tools & scripts needed for [COMP2041/COMP9041](http://cse.unsw.edu.au/~cs2041) including:
 
 * bash
 * perl
