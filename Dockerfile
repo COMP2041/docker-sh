@@ -11,6 +11,7 @@ RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" >/e
     dpkg-reconfigure -f noninteractive tzdata &&\
     rm -rf /var/lib/apt/lists/*
 RUN ln -s /usr/bin/*3.5 /usr/local/bin &&\
+	echo "PS1='Docker\$ '" >/etc//profile.d/comp2041.sh &&\
 	adduser --disabled-password --gecos '' --home  /home/cs2041 cs2041 &&\
 	mkdir -p /home/cs2041/public_html/scripts /web /home/cs2041/bin &&\
 	ln -s  /home/cs2041/public_html /web/cs2041 &&\

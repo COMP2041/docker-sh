@@ -18,18 +18,14 @@ eof
 else
     cat <<eof
 
-Welcome to the COMP[29]041 Docker autotest container
+Welcome to the COMP[29]041 Docker command-line tools & scripts container
 
-If the autotests might changed since this Docker image was created run:
+You can fetch any recent changes to autotest files from CSE (1-2Mb).
+by running: update_files
 
-update_files
-
-This will fetch any updated autotest files from CSE (1-2Mb).
-You can also fetch the latest image by
-
+You can also fetch the latest version of this image (beware can be 100+Mb
+if there have been major changes) by running:
 docker pull comp2041/sh
- 
-Beware this maybe  100+Mb if there have been major changes.
 
 eof
 
@@ -73,8 +69,7 @@ fi
 
 if test $# = 0
 then
-    export PS1='$ '
-    bash
+    bash -l
 else
     "$@"
 fi
