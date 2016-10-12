@@ -24,8 +24,7 @@ You can fetch any recent changes to autotest files from CSE (1-2Mb).
 by running: update_files
 
 You can also fetch the latest version of this image (beware can be 100+Mb
-if there have been major changes) by running:
-docker pull comp2041/sh
+if there have been major changes) by running: docker pull comp2041/sh
 
 eof
 

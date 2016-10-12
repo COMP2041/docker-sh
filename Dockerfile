@@ -23,7 +23,7 @@ RUN ln -s /usr/bin/*3.5 /usr/local/bin &&\
     wget --quiet -O- http://www.cse.unsw.edu.au/~cs2041/cgi/distributed_files.cgi | \
     tar -C /home/cs2041/public_html --owner=cs2041 -xJf -
 
-ENV PATH $PATH:/home/cs2041/public_html/scripts
+ENV PATH $PATH:/home/cs2041/public_html/scripts:.
 ENV LC_COLLATE POSIX
 ADD /entrypoint entrypoint
 ENTRYPOINT ["/entrypoint"]
