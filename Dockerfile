@@ -5,8 +5,9 @@ RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" >/e
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB82666C &&\
     apt-get update &&\
     apt-get install -y --no-install-recommends \
-        python python3.5 python-requests python3-requests python-beautifulsoup python-bs4 python3-bs4 python-lxml python3-lxml \
+        python python3.5 python3-requests  python3-bs4 python3-lxml \
         libdbd-sqlite3-perl libdbi-perl python-pysqlite2 sqlite3 \
+        python3-jinja2 python3-flask python3-jinja2 python3-flask python3-metaconfig python3-six python3-mako python3-genshi \
         perl rsync wget curl xz-utils id3 time unzip locales vim ssh imagemagick git net-tools bind9-host &&\
     localedef -i en_AU -c -f UTF-8 -A /usr/share/locale/locale.alias en_AU.UTF-8 &&\
     dpkg-reconfigure -f noninteractive tzdata &&\
