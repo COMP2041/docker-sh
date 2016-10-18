@@ -8,7 +8,10 @@ RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" >/e
         python python3.5 python3-requests  python3-bs4 python3-lxml \
         libdbd-sqlite3-perl libdbi-perl python-pysqlite2 sqlite3 \
         python3-jinja2 python3-flask python3-jinja2 python3-flask python3-metaconfig python3-six python3-mako python3-genshi \
-        perl rsync wget curl xz-utils id3 time unzip locales vim ssh imagemagick git net-tools bind9-host &&\
+        perl  libdatetime-perl libdatetime-format-iso8601-perl  liblist-moreutils-perl libjson-perl libcrypt-passwdmd5-perl  libswitch-perl libhttp-daemon-perl libhtml-parser-perl \
+        libcgi-simple-perl libcgi-pm-perl libcgi-formbuilder-perl libcgi-session-perl \
+        libmail-sendmail-perl libdate-manip-perl libmailtools-perl libgraphics-magick-perl libscalar-list-utils-perl libhtml-template-perl libhtml-scrubber-perl libimage-magick-perl libwww-perl \
+        rsync wget curl xz-utils id3 time unzip locales vim ssh imagemagick git net-tools bind9-host &&\
     localedef -i en_AU -c -f UTF-8 -A /usr/share/locale/locale.alias en_AU.UTF-8 &&\
     dpkg-reconfigure -f noninteractive tzdata &&\
     rm -rf /var/lib/apt/lists/*
