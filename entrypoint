@@ -3,6 +3,7 @@
 unset DEBIAN_FRONTEND
 
 cd /root
+export PATH=$PATH:/home/cs2041/public_html/scripts:.
 
 # Test if we have some files in /root - 
 if test -z "`ls /root 2>/dev/null`"
