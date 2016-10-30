@@ -18,11 +18,12 @@ RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" >/e
     rm -rf /var/lib/apt/lists/*
 RUN ln -s /usr/bin/*3.5 /usr/local/bin &&\
     echo "PS1='Docker\$ '" >/etc//profile.d/comp2041.sh &&\
+    echo 'PATH=$PATH:/home/cs2041/bin:/home/cs2041/public_html/scripts:.' >>/etc//profile.d/comp2041.sh &&\
     adduser --disabled-password --gecos '' --home  /home/cs2041 cs2041 &&\
     mkdir -p /home/cs2041/public_html/scripts /web /home/cs2041/bin &&\
     ln -s  /home/cs2041/public_html /web/cs2041 &&\
     ln -sf /home/cs2041/public_html/scripts/autotest /home/cs2041/bin &&\
-    ln -sf  give_remote /home/cs2041/public_html/scripts/give &&\
+    ln -sf  give_remote /home/cs2041/bin &&\
     chmod -R 755 /web /home &&\
     chown -R cs2041.cs2041 /web /home &&\
     wget --quiet -O- http://www.cse.unsw.edu.au/~cs2041/cgi/distributed_files.cgi | \
